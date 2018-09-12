@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Todo List</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:700|Montserrat:500|Lato|Slabo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+     <link rel = "stylesheet"
+         href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="circle.css">
+ 
+
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body ng-app="todoapp">
+	<div class="container-fluid banner">
+		<div><h1>TODO LIST</h1></div>
+	</div>	
+	<div class="backpattern"></div>
+		<div class="container-fluid todoarea" ng-controller="Todoctrl">
+			
+			<div class="todocard">
+				<center><h1>All Tasks</h1></center>
+				<div class="noitemmsg"><h3>{{noitemmsg}}</h3></div>
+				<div id="item{{$index}}" class="items " ng-repeat="x in todolist">
+					<md-checkbox ng-model="selected" >{{x}}</md-checkbox>
+					<span ng-click="remove($index)" ng-class="done($index,selected)" style="float: right;font-size: 2em;position: relative;top: -7px;
+					color: #ff1744;cursor: pointer;">&#10007;</span> 
+				</div>
+				
+				<div id="addbtn">
+					<img class="addicon" src="https://png.icons8.com/ios/100/00BFA5/plus-filled.png">
+				</div>	
+				<div class="inputarea">
+					<div style="width: 100%">
+				<md-input-container class = "md-block ">
+                  <label>Add task</label>
+                  <input id="inputtask" required name = "task" ng-model = "addthis">
+                  <div ng-messages = "addthis.$error">
+                     <div ng-message = "required">This is required.</div>
+                  </div>
+               </md-input-container>
+               </div><br>
+				<i id="addingbtn" class="fa fa-paper-plane" ng-click="addtask()"></i>
+				</div>
+				<div class="error">{{err}}</div>
+			</div>
+		</div>
+	<script type="text/javascript">
+		$(document).ready(()=>{
+			$('.inputarea').hide();
+			$("#addbtn").click(()=>{
+				$('.inputarea').slideDown();
+				$("#addbtn").hide();
+			})
+			$("#inputtask").keypress((e)=>{
+				var key=e.which;
+				if (key==13) {
+					$(".fa-paper-plane").trigger('click');
+				}
+			})
+			$("#addingbtn").click(()=>{
+				$('.inputarea').hide();
+				$("#addbtn").fadeIn();
+			})
+
+		})
+	</script>
+</body>
+</html>

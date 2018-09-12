@@ -1,0 +1,87 @@
+*{
+	box-sizing: border-box;
+	font-family: Montserrat;
+}
+body{
+	background-color: #2a84c1!important;
+	color: #fff!important;
+
+}
+.banner{
+	background: ;
+	text-align: center;
+	padding: 3vh 0 1vh 0;
+
+}
+.items{
+	padding:1.3vh 2% 0vh 2%;
+	margin-top: 1vh;
+	font-size: 1.2em;
+	background-color: #EFEBE9;
+	border-radius: 10px;
+}
+
+.done{
+	background-color: #CCFF90;
+	box-shadow: inset 0px 2px 3px rgba(5,5,5,0.3); /*bottom internal shadow*/ 
+	transition-duration: .3s;
+
+}
+md-checkbox .md-icon {
+    background: #fff;
+}
+md-checkbox.md-checked .md-icon {
+    background: #8BC34A;
+   
+}
+.todoarea{
+	
+}
+.backpattern{
+	background-color: #7CB6DD;
+	height: 10vh;
+	position: absolute;
+	top: 30vh;
+	width: 100%;
+	z-index: 0;
+
+}
+.todocard{
+	border-radius: 12px;
+	position: relative;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	padding: 3vh 3% 12vh 3%;
+	margin: 10vh 35% 0 35%;
+	background-color: #fff;
+	color: #221f1f;
+}
+.inputarea{
+	display: flex;
+	margin-top: 3vh;
+}
+#addbtn{
+	
+	position: absolute;
+	bottom: -5vh;
+	left: 40%;
+	background-color: #fff;
+	display: table;
+	border-radius: 50%;
+}
+.error{
+	color: red;
+	font-size: 1.2em;
+	margin-top: 1vh;
+	
+}
+.addicon{
+	
+	cursor: pointer;
+}
+.noitemmsg{
+	opacity: .7;
+	margin-top: 6vh!important;
+}
+#addingbtn{
+	font-size:1.5em;margin-left: 3%;cursor: pointer;margin-top: 10px;
+}
