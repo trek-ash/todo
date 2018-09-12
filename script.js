@@ -1,6 +1,6 @@
 var app=angular.module('todoapp',['ngMaterial']);
 app.controller('Todoctrl',($scope)=>{
-	$scope.todolist=['Coding'];	
+	$scope.todolist=[];	
 	if ($scope.todolist.length==0) {
 		$scope.noitemmsg='No task to do';
 	}else $scope.noitemmsg='';
