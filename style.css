@@ -46,12 +46,31 @@ md-checkbox.md-checked .md-icon {
 	z-index: 0;
 
 }
+@media screen and (max-width: 992px){
+	.todocard{
+		margin-left: 20%!important;
+		transition-duration: .3s;
+		width: 55%!important;
+	}
+
+}
+@media screen and (max-width: 660px){
+	.todocard{
+			margin-left: 5%!important;
+			transition-duration: .3s;
+			width: 90%!important;
+	}
+	#addbtn{
+		left: 30%!important;
+	}
+}
 .todocard{
 	border-radius: 12px;
 	position: relative;
+	width: 30%;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 	padding: 3vh 3% 12vh 3%;
-	margin: 10vh 35% 0 35%;
+	margin: 10vh auto 0 35%;
 	background-color: #fff;
 	color: #221f1f;
 }

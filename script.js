@@ -19,6 +19,7 @@ app.controller('Todoctrl',($scope)=>{
 	}
 	$scope.remove=(x)=>{
 		$scope.todolist.splice(x,1);
+		
 		if ($scope.todolist.length==0) {
 			$scope.noitemmsg='No task to do';
 		}else $scope.noitemmsg='';		
